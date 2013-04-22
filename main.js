@@ -38,7 +38,8 @@
     }
     free_cell.row = free_cell.col = 4;
     $("div[data-pos=16]").html('');
-    return set_cursor();
+    set_cursor();
+    return check_completion();
   };
 
   set_cursor = function() {
@@ -60,8 +61,9 @@
     }
     complition = Math.round(correct * 100 / 15, 1);
     $("#score").text("Complition: " + complition + "% (correct: " + correct + "; incorrect: " + incorrect + ")");
-    if (Complition === 100) {
-      return alert("you won");
+    if (complition === 100) {
+      alert("Congratulations! You won");
+      return start_puzzle();
     }
   };
 

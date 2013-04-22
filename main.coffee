@@ -20,6 +20,7 @@ start_puzzle = ->
 	free_cell.row = free_cell.col = 4
 	$("div[data-pos=16]").html ''
 	set_cursor()
+	check_completion()
 
 set_cursor = ->
 	$(".col").removeClass('hand_pointer')
@@ -36,7 +37,9 @@ check_completion = ->
 			incorrect++
 	complition = Math.round(correct * 100 / 15, 1)
 	$("#score").text "Complition: #{complition}% (correct: #{correct}; incorrect: #{incorrect})"
-	alert "you won" if Complition == 100
+	if complition == 100
+		alert "Congratulations! You won" 
+		start_puzzle()
 
 $(document).ready ->
 
