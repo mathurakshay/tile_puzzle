@@ -10,6 +10,11 @@
     col: 4
   };
 
+  /*
+  # returns a shuffeled list of numbers from 1 to the given number
+  */
+
+
   get_random_list = function(t) {
     var n, r_list, _i, _results;
     r_list = [];
@@ -25,6 +30,12 @@
     }
     return r_list;
   };
+
+  /*
+  # arreanges the tiles for the first time (shuffeled) 
+  # either with an image or with numbers
+  */
+
 
   start_puzzle = function() {
     var i, items, _i;
@@ -42,12 +53,23 @@
     return check_completion();
   };
 
+  /*
+  # Takes care that hand cursor shows up on the movable tiles
+  */
+
+
   set_cursor = function() {
     $(".col").removeClass('hand_pointer');
     $("div[data-col=" + free_cell.col + "]").addClass('hand_pointer');
     $("div[data-row=" + free_cell.row + "] .col").addClass('hand_pointer');
     return $("div[data-row=" + free_cell.row + "] div[data-col=" + free_cell.col + "]").removeClass('hand_pointer');
   };
+
+  /*
+  # Lets user know current completion status
+  # Greets the user on complition and re-starts new game
+  */
+
 
   check_completion = function() {
     var complition, correct, i, incorrect, _i;
@@ -68,6 +90,12 @@
   };
 
   $(document).ready(function() {
+    /*
+    	# Gets invoked when user clicks the button in front of text box for changing the image
+    	# Allows user to play with any image 
+    	# sets user provided image in tiles and the preview area
+    	# Restarts the puzzle with the new image
+    */
     $("#chnage_image").click(function() {
       image_url = $('#image_url').val() ? "url(" + ($('#image_url').val()) + ")" : '';
       start_puzzle();
@@ -75,6 +103,11 @@
       return $('.tile-ssimg').css("backgroundImage", image_url);
     });
     $("#chnage_image").click();
+    /*
+    	# gets invoked when user clicks on a tile
+    	# Moves tiles as intended by use
+    */
+
     $(".col").click(function(ev) {
       var content_to_move, move_order, target, target_col, target_row, x, _i, _j, _k, _l, _ref, _ref1, _ref2, _ref3, _results, _results1;
       target = $(this);
