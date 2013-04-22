@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Puzzle</title>
+
+<!--<link type="text/css" rel="stylesheet" media="screen" href="http://localhost:8000/css/ext-libs/bootstrap.css">-->
+<style>
+    .clear {clear: both;}
+    .col {float: left; width: 50px; height: 50px; border: 1px solid #ccc;}
+    #maindiv {width: 208px; margin: 50px auto; border: 1px solid #ccc;}
+    #preview_div {width: 200px; height: 200px; margin: 50px auto; border: 1px solid #ccc;}
+	.tile-num {font-size: 34px; line-height: 56px; text-align: center;}
+	.tile-ssimg { width: 50px; height: 50px; }
+        .tile_1 {background-position: 0px 0px;}
+        .tile_2 {background-position: -50px 0px;}
+        .tile_3 {background-position: -100px 0px;}
+        .tile_4 {background-position: -150px 0px;}
+        .tile_5 {background-position: 0px -50px;}
+        .tile_6 {background-position: -50px -50px;}
+        .tile_7 {background-position: -100px -50px;}
+        .tile_8 {background-position: -150px -50px;}
+        .tile_9 {background-position: 0px -100px;}
+        .tile_10 {background-position: -50px -100px;}
+        .tile_11 {background-position: -100px -100px;}
+        .tile_12 {background-position: -150px -100px;}
+        .tile_13 {background-position: 0px -150px;}
+        .tile_14 {background-position: -50px -150px;}
+        .tile_15 {background-position: -100px -150px;}
+        .tile_16 {background-position: -150px -150px;}
+	.hand_pointer {cursor: pointer;}
+</style>
+
+<script type="text/javascript" src="jquery.js"></script>
+<!--<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.2.2/underscore-min.js"></script>-->
+<!--<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/0.5.3/backbone-min.js"></script>-->
+<script type="text/javascript" src="main.js"></script>
+
+
+</head>
+<body class="body_bgcolor">
+    <div id="maindiv">
+            <div class="row-fluid" data-row="1">
+                <div class="col" data-col="1" data-pos="1"></div>
+                <div class="col" data-col="2" data-pos="2"></div>
+                <div class="col" data-col="3" data-pos="3"></div>
+                <div class="col" data-col="4" data-pos="4"></div>
+                <div class="clear"></div>
+            </div>
+            <div class="row-fluid" data-row="2">
+                <div class="col" data-col="1" data-pos="5"></div>
+                <div class="col" data-col="2" data-pos="6"></div>
+                <div class="col" data-col="3" data-pos="7"></div>
+                <div class="col" data-col="4" data-pos="8"></div>
+                <div class="clear"></div>
+            </div>
+            <div class="row-fluid" data-row="3">
+                <div class="col" data-col="1" data-pos="9"></div>
+                <div class="col" data-col="2" data-pos="10"></div>
+                <div class="col" data-col="3" data-pos="11"></div>
+                <div class="col" data-col="4" data-pos="12"></div>
+                <div class="clear"></div>
+            </div>
+            <div class="row-fluid" data-row="4">
+                <div class="col" data-col="1" data-pos="13"></div>
+                <div class="col" data-col="2" data-pos="14"></div>
+                <div class="col" data-col="3" data-pos="15"></div>
+                <div class="col" data-col="4" data-pos="16"></div>
+                <div class="clear"></div>
+            </div>
+    </div>
+    <div style="text-align: center" id="score"></div>
+    <div id="preview_div"></div>
+    <div style="text-align: center">
+        <input type="text" id="image_url" style="width:500px; padding: 5px" value="http://localhost:8000/images/general/shopsocially-users.jpg" />
+        <input type="button" value="Change Image" id="chnage_image" />
+    </div>
+    
+    
+</body>
+</html>
+
